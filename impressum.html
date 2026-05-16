@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#6b7c4a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="JQ">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<title>JQ — Impressum</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a; --surface: #111111; --surface2: #1a1a1a;
+    --olive: #6b7c4a; --olive-light: #8a9e60; --olive-dark: #4a5733;
+    --cream: #e8e0d0; --text: #f0ece4; --text-muted: #888880;
+    --border: rgba(232,224,208,0.08); --border-accent: rgba(107,124,74,0.3);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--black); color: var(--text); font-family: 'Space Mono', monospace; font-size: 13px; cursor: none; }
+  .cursor { position: fixed; width: 8px; height: 8px; background: var(--olive); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); }
+  .cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid var(--olive); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); opacity: .6; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: .15em; color: var(--cream); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; transition: color .3s; }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-cart { font-size: 11px; letter-spacing: .2em; color: var(--text-muted); text-transform: uppercase; }
+
+  .page-header { padding: 10rem 3rem 4rem; border-bottom: 1px solid var(--border); }
+  .page-eyebrow { font-size: 10px; letter-spacing: .4em; text-transform: uppercase; color: var(--olive); margin-bottom: .8rem; }
+  .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 8vw, 7rem); letter-spacing: .02em; color: var(--cream); line-height: .9; }
+
+  .content { max-width: 800px; margin: 0 auto; padding: 6rem 3rem; }
+
+  .section-block { margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid var(--border); }
+  .section-block:last-child { border-bottom: none; }
+
+  .block-label { font-size: 10px; letter-spacing: .4em; text-transform: uppercase; color: var(--olive); margin-bottom: 1.5rem; }
+  .block-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--cream); letter-spacing: .05em; margin-bottom: 1.5rem; }
+  .block-text { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; color: var(--text-muted); line-height: 1.9; }
+  .block-text strong { color: var(--cream); font-weight: 400; }
+  .block-text a { color: var(--olive-light); text-decoration: none; transition: color .2s; }
+  .block-text a:hover { color: var(--cream); }
+
+  .info-grid { display: grid; grid-template-columns: 180px 1fr; gap: .6rem 2rem; }
+  .info-label-col { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--text-muted); padding: .5rem 0; border-bottom: 1px solid var(--border); }
+  .info-value-col { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; color: var(--cream); padding: .5rem 0; border-bottom: 1px solid var(--border); }
+
+  .notice-box { background: var(--surface); border: 1px solid var(--border-accent); border-left: 3px solid var(--olive); padding: 1.5rem 2rem; margin-top: 2rem; }
+  .notice-box p { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+
+  footer { padding: 4rem 3rem 2rem; border-top: 1px solid var(--border); background: var(--surface); }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+  .footer-brand { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--cream); letter-spacing: .15em; display: block; margin-bottom: 1rem; }
+  .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--text-muted); }
+  .footer-col-title { font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--olive); margin-bottom: 1.5rem; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: .8rem; }
+  .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 12px; transition: color .2s; }
+  .footer-links a:hover { color: var(--cream); }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 10px; color: var(--text-muted); letter-spacing: .1em; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .page-header { padding: 8rem 1.5rem 3rem; }
+    .content { padding: 4rem 1.5rem; }
+    .info-grid { grid-template-columns: 1fr; gap: 0; }
+    .info-label-col { border-bottom: none; padding-bottom: 0; margin-top: 1rem; }
+    .info-value-col { padding-top: .2rem; }
+    footer { padding: 3rem 1.5rem 2rem; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.svg" alt="JQ" style="height:44px;width:auto;vertical-align:middle;"></a>
+  <ul class="nav-links">
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span class="nav-cart">Cart (0)</span>
+</nav>
+
+<div class="page-header">
+  <p class="page-eyebrow">— Legal</p>
+  <h1 class="page-title">Impressum</h1>
+</div>
+
+<div class="content">
+
+  <div class="section-block">
+    <p class="block-label">— Angaben gemäß § 5 TMG</p>
+    <h2 class="block-title">Verantwortlich</h2>
+    <div class="info-grid">
+      <span class="info-label-col">Name</span>
+      <span class="info-value-col">Abdeljalil Qesmi</span>
+      <span class="info-label-col">Adresse</span>
+      <span class="info-value-col">Hagenow, 19230<br><em style="font-size:.9rem;color:var(--text-muted)">(vollständige Adresse bitte ergänzen)</em></span>
+      <span class="info-label-col">E-Mail</span>
+      <span class="info-value-col"><a href="mailto:jalil.qesmi.2009@gmail.com">jalil.qesmi.2009@gmail.com</a></span>
+      <span class="info-label-col">Status</span>
+      <span class="info-value-col">Privatperson — Gewerbe in Vorbereitung</span>
+    </div>
+    <div class="notice-box">
+      <p>Diese Website befindet sich im Aufbau. Ein Verkauf findet derzeit noch nicht statt. Sobald das Gewerbe angemeldet ist, wird das Impressum um Steuernummer und vollständige Angaben ergänzt.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <p class="block-label">— Streitschlichtung</p>
+    <h2 class="block-title">Online-Streitbeilegung</h2>
+    <p class="block-text">Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank">ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+  </div>
+
+  <div class="section-block">
+    <p class="block-label">— Haftung</p>
+    <h2 class="block-title">Haftung für Inhalte</h2>
+    <p class="block-text">Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+  </div>
+
+  <div class="section-block">
+    <p class="block-label">— Urheberrecht</p>
+    <h2 class="block-title">Copyright</h2>
+    <p class="block-text">Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.<br><br><strong>© 2026 Abdeljalil Qesmi — JQ. Alle Rechte vorbehalten.</strong></p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <img src="logo.svg" alt="JQ" style="height:60px;width:auto;margin-bottom:1rem;display:block;">
+      <p class="footer-tagline">Art you wear.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Shop</p>
+      <ul class="footer-links">
+        <li><a href="shop.html">T-Shirts</a></li>
+        <li><a href="shop.html">Hoodies</a></li>
+        <li><a href="shop.html">Pants</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Info</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About JQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Follow</p>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/jalulu_14" target="_blank">Instagram</a></li>
+        <li><a href="https://tiktok.com" target="_blank">TikTok (coming soon)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Abdeljalil Qesmi — JQ</span>
+    <span><a href="impressum.html" style="color:var(--text-muted);text-decoration:none;">Impressum</a></span>
+  </div>
+</footer>
+
+<script>
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; cursor.style.left=mx+'px'; cursor.style.top=my+'px'; });
+function animRing(){ rx+=(mx-rx)*.12; ry+=(my-ry)*.12; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(animRing); }
+animRing();
+</script>
+
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('JQ SW registered:', reg.scope))
+      .catch(err => console.log('SW error:', err));
+  });
+}
+</script>
+
+<!-- PWA Install Banner -->
+<div id="installBanner" style="display:none;position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:500;background:#111;border:1px solid rgba(107,124,74,0.4);padding:1rem 1.5rem;display:flex;align-items:center;gap:1.5rem;min-width:300px;max-width:90vw;box-shadow:0 8px 32px rgba(0,0,0,0.6);">
+  <img src="logo.png" style="width:40px;height:40px;border-radius:8px;object-fit:cover;background:#0a0a0a;">
+  <div>
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:#e8e0d0;letter-spacing:.05em;">Install JQ App</div>
+    <div style="font-size:10px;color:#888880;letter-spacing:.1em;margin-top:.2rem;">Add to your homescreen</div>
+  </div>
+  <button id="installBtn" style="background:#6b7c4a;border:none;color:#0a0a0a;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:.6rem 1.2rem;cursor:pointer;white-space:nowrap;">Install</button>
+  <button onclick="document.getElementById('installBanner').style.display='none'" style="background:none;border:none;color:#888880;font-size:1.2rem;cursor:pointer;padding:.2rem;">×</button>
+</div>
+<script>
+// PWA Install Banner — only show if NOT already installed
+var deferredPrompt;
+var isInstalled = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+if(!isInstalled){
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault();
+    deferredPrompt = e;
+    setTimeout(function(){
+      var banner = document.getElementById('installBanner');
+      if(banner) banner.style.display='flex';
+    }, 4000);
+  });
+}
+
+var installBtn = document.getElementById('installBtn');
+if(installBtn){
+  installBtn.addEventListener('click', async function(){
+    if(!deferredPrompt) return;
+    deferredPrompt.prompt();
+    var result = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    var banner = document.getElementById('installBanner');
+    if(banner) banner.style.display='none';
+  });
+}
+
+window.addEventListener('appinstalled', function(){
+  var banner = document.getElementById('installBanner');
+  if(banner) banner.style.display='none';
+  deferredPrompt = null;
+});
+</script>
+</body>
+</html>
